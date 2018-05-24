@@ -1,0 +1,22 @@
+{% extends 'todos/base.html' %}
+{% block content %}
+
+<div class="container col-md-4 offset md-8 bg-secondary text-center">
+        <h1 class="h1 text-center mb-title  bg-secondary">{% block title %}Todo Edit{% endblock %}</h1>
+        <form action="" method ="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="Title">Title:</label>
+                <input type="text" class="form-control" id="Title" placeholder="Title not rendered" name="Title" value="{{todos.Title}}">
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea rows="05" column "20" name="Description" placeholder="Description not rendered" id="Description"  class="form-control" >{{todos.Description}}</textarea>
+            </div>
+            <a href="/todos/" class="btn btn-success" role="button">Back</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+</div>
+
+{% endblock %} 
+

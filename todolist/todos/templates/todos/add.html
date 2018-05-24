@@ -1,0 +1,21 @@
+{% extends 'todos/base.html' %}
+{% block content %}
+
+<div class="container col-md-4 offset md-5 bg-secondary text-center">
+        <h1 class="h1 text-center mb-title  bg-secondary">{% block title %}Todo Add{% endblock %}</h1>
+        <form action="" method ="post">
+                {% csrf_token %}
+                <div class="form-group">
+                <label for="Title">Title:</label>
+                <input type="text" class="form-control" id="Title" placeholder="What's in your mind" name="Title" required></input>
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description:</label>
+                    <textarea rows="05" column "20" name="Description" placeholder="Enter the description" id="Description"  class="form-control" required ></textarea>
+                </div>
+                <a href="/todos/" class="btn btn-info" role="button">Back</a>
+                <button type="submit" class="btn btn-success">Add todo</button>    
+        </form>
+</div>
+
+{% endblock %} 

@@ -1,0 +1,19 @@
+{% extends 'todos/base.html' %}
+{% block content %}
+
+
+<div class="container col-md-4 offset md-8 bg-secondary text-center">
+<h1 class="h1 text-center mb-title  bg-secondary">{% block title %}Todo Details{% endblock %}</h1>
+<!-- <h1 class="h1 text-center mb-title  bg-secondary">Todo Details</h1> -->
+  <div class="card">
+    <div class="card-header text-center "><strong>Id:</strong>{{todo.id}}</div> 
+    <div class="card-body text-center "><strong>Title:</strong>{{todo.Title}}</div>
+    <div class="card-body text-center "><strong>Description:</strong>{{todo.Description}}</div>
+    <div class="card-footer text-center "><a href="/todos/" class="btn btn-success btn-sm" role="button">Back</a><a href="/todos/{{todo.id}}/change" class="btn btn-secondary btn-sm" role="button">Edit</a></div>
+  </div>    
+</div>
+
+{% endblock %}   
+
+
+   
